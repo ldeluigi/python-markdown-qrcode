@@ -1,12 +1,16 @@
 QRCODE Markdown Extension
 =========================
 
+# NOW YOU CAN USE IT IN PYTHON3
+
 ## Installation
 
 1. You need to have python-setuptools installed
 `sudo apt-get install python-setuptools`
 1. `python ./setup.py install`
 
+**Or**  
+`pip install git+https://github.com/XiaofengdiZhu/python-markdown-qrcode.git`  
 
 ## Format
 
@@ -34,26 +38,25 @@ color doesn't work real well). All OPTS are optional.
 
 ## Config Options
 
-intPixelSize
-: Pixel Size of each dark and light bit. _Default is 2_
+`pixelsize`
+: Pixel Size of each dark and light bit. _Default is 4_
 
-useShortSyntax
-: Enable the use of the original short syntax. _Default is True_
+`lightcolor`
+: The color to use for background bits. _Default is #FFFFFF (white)_
 
-bgColor
-: The color to use for background ("light colored") bits. _Default is #FFFFFF (white)_
+`darkcolor`
+: The color to use for foreground bits. _Default is #000000 (black)_
 
-fgColor
-: The color to use for foreground ("dark colored") bits. _Default is #000000 (black)_
+`bordercolor`
+: The color to use for each bit borders. _Default is #000000 (black)_
 
-ecLevel
-: The error correcting level to use. One of L, M, H, or Q. _Default is L_
+## Format
 
+### Syntax
 
-## Notes
+This is the short syntax:
 
-You can try including square brackets in DATA by escaping them with front slashes,
-but markdown seems to be replacing them with some strange escape code.
+    [{ str data to encode }]
 
 ## Legal
 
