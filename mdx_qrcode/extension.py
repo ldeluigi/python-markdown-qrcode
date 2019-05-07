@@ -196,5 +196,5 @@ if __name__ == "__main__":
     #print doctest.testmod()
     #print "-" * 8
     md = markdown.Markdown(extensions=['qrcode', 'def_list'])
-    print md.convert( __doc__ )
+    print(md.convert( __doc__ ))
 
