@@ -67,11 +67,14 @@ but markdown seems to be replacing them with some strange escape code.
 
 
 import markdown
-import StringIO
 import types
 from QrCodeLib import *
 from markdown.util import etree
 from base64 import b64encode
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 class QrCodeExtension(markdown.Extension):
   """ QRcode Extension for Python-Markdown. """
