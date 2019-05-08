@@ -27,7 +27,7 @@ class QrCodeExtension(markdown.Extension):
     Create an instance of QrCodeExtension
  
     Keyword arguments:
-    * configs: A dict of configuration settings passed in by the user.
+    * kwargs: A dict of configuration settings passed in by the user.
     """
     # Set extension defaults
     self.config = {
@@ -36,6 +36,10 @@ class QrCodeExtension(markdown.Extension):
       "darkcolor" : [ '#000000', "Dark Color" ],
       "bordercolor" : [ '#000000', "Border Color" ],
     }
+    # Override defaults with user settings
+    for key, value in kwargs:
+      self.setConfig(key, value)
+
     super(QrCodeExtension, self).__init__(*args, **kwargs)
  
   def add_inline(self, md, name, pattern_class, pattern):
@@ -54,7 +58,7 @@ class QrCodeExtension(markdown.Extension):
   def extendMarkdown(self, md, md_globals):
     self.add_inline(md, 'qrcode', BasicQrCodePattern, r'\[\{\s(?P<data>.*?)\s\}\]')
 
-class BasicQrCodePattern(markdown.inlinepatterns.ImagePattern):
+class BasicQrCodePattern(markdown.inlinepatterns.Pattern):
   def __init__(self, pattern, config):
     self.pattern = pattern
     self.config = config

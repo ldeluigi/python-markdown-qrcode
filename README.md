@@ -1,7 +1,7 @@
 QRCODE Markdown Extension
 =========================
 
-# NOW YOU CAN USE IT IN PYTHON3
+# Ported to Python 3
 
 ## Installation
 
@@ -10,31 +10,11 @@ QRCODE Markdown Extension
 1. `python ./setup.py install`
 
 **Or**  
-`pip install git+https://github.com/XiaofengdiZhu/python-markdown-qrcode.git`  
+`pip install git+https://github.com/viable-hartman/python-markdown-qrcode.git`
 
 ## Format
 
-### Traditional Syntax
-
-This is the "traditional" short syntax:
-
-    [-[str data to encode]-]
-
-
-### Domain Syntax
-
-A second, more verbose but more general and powerful syntax, is called the "domain"
-syntax. It looks like this:
-
-    :qr:4:bg=#FF0000:fg=#0000FF:ec=Q:[Encode this as well.]
-
-The domain syntax has the general form:
-
-    :qr:<OPTS>:[<DATA>]
-
-Where OPTS can be used to specify the pixel-size, the foreground and background size,
-and the QR Error Correcting Level to use (L, M, H, or Q). (Note that the foreground
-color doesn't work real well). All OPTS are optional.
+    [{ QR CODE DATA }]
 
 ## Config Options
 
