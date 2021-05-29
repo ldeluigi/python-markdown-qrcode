@@ -16,21 +16,12 @@ QRcode markdown filter
  
 import markdown
 from io import BytesIO
-from mdx_qrcode.QrCodeLib import *
-from markdown.util import etree
+from pymdqr.QrCodeLib import *
 from base64 import b64encode
-from markdown.extensions import Extension
-from markdown.inlinepatterns import Pattern
  
-class QrCodeExtension(Extension):
+class QrCodeExtension(markdown.extensions.Extension):
   """ QRcode Extension for Python-Markdown. """
   def __init__(self, *args, **kwargs):
-    """
-    Create an instance of QrCodeExtension
- 
-    Keyword arguments:
-    * kwargs: A dict of configuration settings passed in by the user.
-    """
     # Set extension defaults
     self.config = {
       "pixelsize"  : [  4, "Pixel Size of each dark and light bit" ],
@@ -45,13 +36,6 @@ class QrCodeExtension(Extension):
     super(QrCodeExtension, self).__init__(*args, **kwargs)
  
   def add_inline(self, md, name, pattern_class, pattern):
-    """
-    Add new functionality to the Markdown instance.
- 
-    Keyword arguments:
-    * md: The Markdown instance.
-    * md_globals: markdown's global variables.
-    """
     objPattern = pattern_class(pattern, self.config)
     objPattern.md = md
     objPattern.ext = self
@@ -60,7 +44,7 @@ class QrCodeExtension(Extension):
   def extendMarkdown(self, md, md_globals):
     self.add_inline(md, 'qrcode', BasicQrCodePattern, r'\[\{\s(?P<data>.*?)\s\}\]')
 
-class BasicQrCodePattern(Pattern):
+class BasicQrCodePattern(markdown.inlinepatterns.Pattern):
   def __init__(self, pattern, config):
     self.pattern = pattern
     self.config = config
