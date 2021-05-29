@@ -29,6 +29,7 @@ class QrCodeExtension(markdown.extensions.Extension):
       "lightcolor" : [ '#ffffff', "Light Color" ],
       "darkcolor" : [ '#000000', "Dark Color" ],
       "bordercolor" : [ '#000000', "Border Color" ],
+      "priority": [ 45, "Priority"]
     }
     # Override defaults with user settings
     for key, value in configs.items():
@@ -38,7 +39,7 @@ class QrCodeExtension(markdown.extensions.Extension):
     objPattern = pattern_class(pattern, self.config)
     objPattern.md = md
     objPattern.ext = self
-    md.inlinePatterns.add(name, objPattern, '_begin')
+    md.inlinePatterns.register(objPattern, name, self.getConfig('priority'))
  
   def extendMarkdown(self, md, md_globals):
     self.add_inline(md, 'qrcode', BasicQrCodePattern, r'\[\{\s(?P<data>.*?)\s\}\]')
