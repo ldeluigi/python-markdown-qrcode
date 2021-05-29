@@ -17,7 +17,7 @@ QRcode markdown filter
  
 import markdown
 from io import BytesIO
-from mdx_qrcode.QrCodeLib import *
+from .QrCodeLib import *
 from base64 import b64encode
  
 class QrCodeExtension(markdown.extensions.Extension):
