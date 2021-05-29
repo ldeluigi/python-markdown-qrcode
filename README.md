@@ -25,7 +25,7 @@ Note: Ported to Python 3
 : The color to use for each bit borders. _Default is #000000 (black)_
 
 `priority`
-: Priority for this plugin
+: Priority for this plugin. _Default is 45_
 
 ## Extending Python Markdown:
 The extension name is 'mdqrcode'
