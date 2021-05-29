@@ -19,8 +19,10 @@ from io import BytesIO
 from mdx_qrcode.QrCodeLib import *
 from markdown.util import etree
 from base64 import b64encode
+from markdown.extensions import Extension
+from markdown.inlinepatterns import Pattern
  
-class QrCodeExtension(markdown.Extension):
+class QrCodeExtension(Extension):
   """ QRcode Extension for Python-Markdown. """
   def __init__(self, *args, **kwargs):
     """
@@ -58,7 +60,7 @@ class QrCodeExtension(markdown.Extension):
   def extendMarkdown(self, md, md_globals):
     self.add_inline(md, 'qrcode', BasicQrCodePattern, r'\[\{\s(?P<data>.*?)\s\}\]')
 
-class BasicQrCodePattern(markdown.inlinepatterns.Pattern):
+class BasicQrCodePattern(Pattern):
   def __init__(self, pattern, config):
     self.pattern = pattern
     self.config = config

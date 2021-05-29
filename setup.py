@@ -7,7 +7,6 @@ setup(
   url="github.com/ldeluigi/python-markdown-qrcode",
   py_modules=[
     'pymdownmx.qrcode',
-    'pymdownmx.extension',
     'pymdownmx.QrCodeLib',
   ],
   license='LICENSE.md',
