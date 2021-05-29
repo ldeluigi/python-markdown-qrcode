@@ -4,13 +4,7 @@ QRCODE Markdown Extension
 # Ported to Python 3
 
 ## Installation
-
-1. You need to have python-setuptools installed
-`sudo apt-get install python-setuptools`
-1. `python ./setup.py install`
-
-**Or**  
-`pip install git+https://github.com/viable-hartman/python-markdown-qrcode.git`
+`pip install git+git://github.com/ldeluigi/python-markdown-qrcode#egg=markdown_qrcode`
 
 ## Format
 
