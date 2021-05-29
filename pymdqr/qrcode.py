@@ -21,7 +21,7 @@ from base64 import b64encode
  
 class QrCodeExtension(markdown.extensions.Extension):
   """ QRcode Extension for Python-Markdown. """
-  def __init__(self, *args, **kwargs):
+  def __init__(self, configs={}):
     # Set extension defaults
     self.config = {
       "pixelsize"  : [  4, "Pixel Size of each dark and light bit" ],
@@ -30,7 +30,7 @@ class QrCodeExtension(markdown.extensions.Extension):
       "bordercolor" : [ '#000000', "Border Color" ],
     }
     # Override defaults with user settings
-    for key, value in kwargs:
+    for key, value in configs.items():
       self.setConfig(key, value)
 
     super(QrCodeExtension, self).__init__(*args, **kwargs)
@@ -83,4 +83,4 @@ class BasicQrCodePattern(markdown.inlinepatterns.Pattern):
       return None
  
 def makeExtension(*args, **kwargs):
-  return QrCodeExtension(*args, **kwargs)
+  return QrCodeExtension(kwargs)
