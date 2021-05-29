@@ -33,8 +33,6 @@ class QrCodeExtension(markdown.extensions.Extension):
     # Override defaults with user settings
     for key, value in configs.items():
       self.setConfig(key, value)
-
-    super(QrCodeExtension, self).__init__(*args, **kwargs)
  
   def add_inline(self, md, name, pattern_class, pattern):
     objPattern = pattern_class(pattern, self.config)
