@@ -1,7 +1,7 @@
 QRCODE Markdown Extension
 =========================
 
-# Ported to Python 3
+Note: Ported to Python 3
 
 ## Installation
 `pip install git+git://github.com/ldeluigi/python-markdown-qrcode#egg=markdown_qrcode`
@@ -24,13 +24,8 @@ QRCODE Markdown Extension
 `bordercolor`
 : The color to use for each bit borders. _Default is #000000 (black)_
 
-## Format
-
-### Syntax
-
-This is the short syntax:
-
-    [{ str data to encode }]
+## Extending Python Markdown:
+The extension name is 'mdqrcode'
 
 ## Legal
 
