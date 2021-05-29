@@ -5,7 +5,6 @@ setup(
   maintainer="none",
   # maintainer_email="lucadelu97@gmail.com",
   url="github.com/ldeluigi/python-markdown-qrcode",
-  install_requires = ['markdown'],
   license='LICENSE.md',
   description='A markdown extension to insert qrcode datauri images based on supplied data.',
   long_description=open('README.md').read(),
