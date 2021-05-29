@@ -10,5 +10,6 @@ setup(
   license='LICENSE.md',
   description='A markdown extension to insert qrcode datauri images based on supplied data.',
   long_description=open('README.md').read(),
+  install_requires = ['markdown', 'Pillow']
 )
 
